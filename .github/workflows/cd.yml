@@ -57,8 +57,10 @@ jobs:
           command-line-tools/sdkmanager/bin/sdkmgr install toolchains:9 OpenHarmony/toolchains:9 --accept-license
           # get current dir and export to HOS_SDK_HOME
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Create OHPM package.json file
+        run: |
+          npm init -y
+          npm install @ohos/hvigor@2.4.2 @ohos/hvigor-ohos-plugin@2.4.2
 
       - name: Build
         run: |
