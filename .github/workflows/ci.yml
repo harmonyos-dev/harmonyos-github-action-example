@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: macos-latest
+    # sometimes will stuck on Build `hap`, like: https://github.com/harmonyos-dev/aigc-harmonyos-sample/actions/runs/8078878412/job/22074563084
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v2
